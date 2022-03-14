@@ -1,0 +1,195 @@
+:root{
+    --main-background: rgba(255, 173, 177, 0.6);
+    --task-background: white;
+    --input-background: #ffd0d0;
+    --task-title: #6b0101;
+    --new-task: #fc656c;
+    --done-btn: #10ac25;
+    --delete-btn: #FF0000;
+    --task-done: #007900;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    background: var(--main-background);
+}
+
+#app {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    padding: 24px;
+    gap: 24px;
+}
+
+.task{
+    height: 435px;
+    background: var(--task-background);
+    box-sizing: border-box;
+    padding: none;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    resize: none;
+}
+
+.task #title{
+    background: transparent;
+    height: 25px;
+    width: 280px;
+    margin: 20px 20px;
+    border-color: var(--new-task);
+    border-width: 0px 0px 3px 0px;
+    color: var(--task-title);
+    font-size: 28px;
+    font-weight: 600;
+}
+
+input{
+    background: var(--input-background);
+    color: var(--task-title);
+}
+
+textarea{
+    background: var(--input-background);
+    color: var(--task-title);
+    resize: none;
+    padding: 10px;
+}
+
+.task #description, #comments{
+    display: block;
+    margin: 20px 25px;
+    padding-left: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    width: 300px;
+}
+
+.task #description{
+    height: 50px;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.task #comments{
+    height: 130px;
+    text-align: justify;
+}
+
+.priority{
+    display: inline-block;
+    margin-left: 25px;
+}
+
+select{
+    border: none;
+    margin-left: 7%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#high{
+    background: rgb(143, 0, 0);
+    color: white;
+}
+
+#medium{
+    background: #00660e;
+    color: white;
+}
+
+#low{
+    background: #227c9d;
+    color: white;
+}
+
+.dueDate{
+    margin-left: 25px;
+    display: flex;
+}
+
+.inputDate{
+    display: flex;
+    cursor: pointer;
+    margin-left: 6%;
+    border: none;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.task button{
+    display: inline;
+    border: none;
+    margin-right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+i{
+    pointer-events: none;
+}
+
+.doneBtn{
+    margin-left: 70%;
+    color: var(--done-btn);
+}
+
+.deleteBtn{
+    color: var(--delete-btn);
+}
+
+.add-task{
+    height: 435px;
+    border: none;
+    outline: none;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: 120px;
+    color: var(--new-task);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-task h1{
+    font-size: 24px;
+}
+
+.add-task:hover{
+    background: rgba(255, 111, 118, 0.8);
+    color: white;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: var(--task-done);
+    opacity: 0.8;
+    background: #ffffff;
+}
+
+.completed #title{
+    color: var(--task-done);
+    text-decoration: line-through;
+}
+
+.completed input{
+    color: var(--task-done);
+}
+
+.completed select{
+    color: var(--task-done);
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    transition: 0.8s;
+    opacity: 0;
+}
